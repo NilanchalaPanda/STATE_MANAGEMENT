@@ -16,7 +16,7 @@ const ProductCard = ({ singleProd }) => {
   return (
     <div
       onClick={() => navigate(`/${singleProd.id}`)}
-      className="bg-slate-600 p-4 rounded-3xl my-5 md:w-[350px] lg:w-[400px]"
+      className="bg-slate-600 border border-slate-200 p-4 rounded-3xl my-5 md:w-[350px] lg:w-[400px]"
     >
       <img
         className="h-[300px] object-contain mx-auto rounded-3xl mix-blend-overlay"
@@ -29,7 +29,7 @@ const ProductCard = ({ singleProd }) => {
         <p className="font-bold">₹{singleProd.price}</p>
         <button
           onClick={() => handleAdd(singleProd)}
-          className="py-2 px-4 bg-secondary rounded-2xl"
+          className="py-2 px-4 bg-secondary rounded-2xl border border-slate-200"
         >
           Wishlist
         </button>

@@ -10,7 +10,7 @@ import store from './store/store'
 
 function App() {
   return (
-    <div className="min-h-screen bg-primary font-mono text-white">
+    <div className="min-h-screen bg-primary font-mono text-white pb-10">
       <Provider store={store}>
         <BrowserRouter>
           <Navbar />
