@@ -1,19 +1,27 @@
 import { useEffect, useState } from "react";
 import ProductCard from "./ProductCard";
+import { fetchProduct } from "../store/productSilce";
+import { useDispatch } from "react-redux";
+import { useSelector } from "react-redux";
 
 const Products = () => {
+  const dispatch = useDispatch();
+  const productFetching = useSelector(state => state.product);
   const [products, setProducts] = useState([]);
 
   useEffect(() => {
-    const fetchProducts = async () => {
-      const response = await fetch("https://fakestoreapi.com/products");
-      const ProductData = await response.json();
+    dispatch(fetchProduct());
+    console.log(productFetching.data);
 
-      console.log("DATA : ", ProductData);
-      setProducts(ProductData);
-    };
+    // const fetchProducts = async () => {
+    //   const response = await fetch("https://fakestoreapi.com/products");
+    //   const ProductData = await response.json();
 
-    fetchProducts();
+    //   console.log("DATA : ", ProductData);
+    //   setProducts(ProductData);
+    // };
+
+    // fetchProducts();
   }, []);
 
   return (
