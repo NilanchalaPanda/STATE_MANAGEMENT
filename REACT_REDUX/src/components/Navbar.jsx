@@ -8,9 +8,9 @@ const Navbar = () => {
 
   return (
     <div className="shadow-xl shadow-slate-900 bg-tertiary text-2xl py-5 flex justify-between px-5 md:justify-between md:px-24 items-center font-mono">
-      <div>
+      <Link to="/">
         <img src="./Logo.png" alt="Logo" className="w-[50px] mix-blend-normal"/>
-      </div>
+      </Link>
 
       <div className="flex items-center text-lg gap-x-4 md:gap-x-8">
         <Link
