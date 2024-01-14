@@ -1,6 +1,6 @@
 import { createSlice } from "@reduxjs/toolkit";
 
-const STATUSES = Object.freeze({
+export const STATUSES = Object.freeze({
   IDLE: "idle",
   ERROR: "error",
   LOADING: "loading",
@@ -36,8 +36,6 @@ export function fetchProduct() {
     try {
       const response = await fetch("https://fakestoreapi.com/products");
       const productData = await response.json();
-
-      console.log("DATA : ", productData);
       dispatch(setProducts(productData));
       dispatch(setStatus(STATUSES.IDLE));
     } catch (error) {
