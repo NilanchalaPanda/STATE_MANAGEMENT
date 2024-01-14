@@ -3,6 +3,7 @@ import { useNavigate } from "react-router-dom";
 // REDUX IMPORT STATEMENTS :
 import { add } from "../store/cartSlice";
 import { useDispatch } from "react-redux";
+import toast from "react-hot-toast";
 
 const ProductCard = ({ singleProd }) => {
   const navigate = useNavigate();
@@ -11,6 +12,7 @@ const ProductCard = ({ singleProd }) => {
   const handleAdd = (product) => {
     // Store it in REDUX :
     dispatch(add(product));
+    toast.success("Items Added");
   };
 
   return (

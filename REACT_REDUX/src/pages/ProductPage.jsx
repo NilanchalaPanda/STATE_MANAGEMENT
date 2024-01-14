@@ -4,6 +4,7 @@ import { useLocation } from "react-router-dom";
 import { ClipLoader } from "react-spinners";
 import { add } from "../store/cartSlice";
 import { STATUSES } from "../store/productSilce";
+import toast from "react-hot-toast";
 
 const ProductPage = () => {
   const { pathname } = useLocation();
@@ -16,6 +17,7 @@ const ProductPage = () => {
   const handleAdd = (product) => {
     // Store it in REDUX :
     dispatch(add(product));
+    toast.success("Item Added");
   };
   const ID = pathname.split("/").slice(-1)[0];
 
