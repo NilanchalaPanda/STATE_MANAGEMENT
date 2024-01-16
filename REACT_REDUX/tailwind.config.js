@@ -10,7 +10,8 @@ export default {
         primary: "#213547",
         secondary: "#646cff",
         secondaryhover: "#535bf2",
-        tertiary: "#242424"
+        tertiary: "#242424",
+        // success: "green"
       },
     },
   },

@@ -2,17 +2,25 @@ import { useNavigate } from "react-router-dom";
 
 // REDUX IMPORT STATEMENTS :
 import { add } from "../store/cartSlice";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import toast from "react-hot-toast";
 
 const ProductCard = ({ singleProd }) => {
   const navigate = useNavigate();
   const dispatch = useDispatch();
+  const cartData = useSelector((state) => state.cart);
 
-  const handleAdd = (product) => {
-    // Store it in REDUX :
-    dispatch(add(product));
-    toast.success("Items Added");
+  const isProductAdded = cartData.find((item) => item.id === singleProd.id);
+
+  const handleAdd = (selectedProduct) => {
+    //Condition to check if card id added or not :
+    if (isProductAdded) {
+      return toast("This product is already in your cart");
+    } else {
+      // Store it in REDUX :
+      dispatch(add(selectedProduct));
+      toast.success("Items Added");
+    }
   };
 
   return (
@@ -33,9 +41,9 @@ const ProductCard = ({ singleProd }) => {
         <p className="font-bold">₹{singleProd.price}</p>
         <button
           onClick={() => handleAdd(singleProd)}
-          className="py-2 px-4 bg-secondary rounded-2xl border border-slate-200"
+          className={isProductAdded ? `py-2 px-4 bg-green-500 rounded-2xl border border-slate-200` : `py-2 px-4 bg-secondary rounded-2xl border border-slate-200`}
         >
-          Wishlist
+          {isProductAdded ? "Added" : "Wishlist"}
         </button>
       </div>
     </div>
