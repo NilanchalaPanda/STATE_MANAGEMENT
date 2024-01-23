@@ -31,7 +31,7 @@ const ProductCard = ({ singleProd }) => {
         alt={singleProd.description}
       />
       <h1
-        onClick={() => navigate(`/${singleProd.id}`)}
+        onClick={() => navigate(`/${singleProd.id}`)} 
         className="mx-5 text-left pt-3 text-xl cursor-pointer hover:text-gray-300 transition-all"
       >
         {singleProd.title}

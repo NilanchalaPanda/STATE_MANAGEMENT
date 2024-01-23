@@ -1,8 +1,9 @@
 import { BrowserRouter, Route, Routes } from "react-router-dom";
-import Home from "./pages/Home";
+import ProductsPage from "./pages/ProductsPage";
 import WishList from "./pages/WishList";
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
+import Home from "./pages/Home";
 import ProductPage from "./pages/ProductPage";
 import { Toaster } from "react-hot-toast";
 
@@ -18,6 +19,7 @@ function App() {
           <Navbar />
           <Routes>
             <Route path="/" element={<Home />} />
+            <Route path="/products" element={<ProductsPage />} />
             <Route path="/wishlist" element={<WishList />} />
             <Route path="/:ProductID" element={<ProductPage />} />
           </Routes>

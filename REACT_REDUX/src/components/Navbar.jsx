@@ -24,6 +24,12 @@ const Navbar = () => {
           Home
         </Link>
         <Link
+          className="text-secondary hover:text-secondaryhover text-inherit"
+          to="/products"
+        >
+          Products
+        </Link>
+        <Link
           to="/wishlist"
           className="flex justify-center items-center w-10 h-10 relative rounded-full bg-secondaryhover"
         >
